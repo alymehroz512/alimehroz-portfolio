@@ -29,22 +29,6 @@ function AnimatedHR() {
   return <Animated.hr style={style} className="animated-hr" />;
 }
 
-function AnimatedSeparator({ isVertical }) {
-  const style = useSpring({
-    from: { transform: isVertical ? "scaleY(0)" : "scaleX(0)", opacity: 0 },
-    to: { transform: isVertical ? "scaleY(1)" : "scaleX(1)", opacity: 1 },
-    config: { tension: 250, friction: 18 },
-    delay: 700,
-  });
-
-  return (
-    <Animated.div
-      style={style}
-      className={isVertical ? "vertical-separator" : "horizontal-separator"}
-    />
-  );
-}
-
 function Contact() {
   const [message, setMessage] = useState("");
   const [wordCount, setWordCount] = useState(0);
@@ -235,7 +219,7 @@ function Contact() {
             creative collaborations. If you’ve got a project or just want to say
             hi, feel free to drop me a message!
           </p>
-          <Row className="g-4 mt-3 contact-cards-row">
+          <Row className="g-1 mt-3 contact-cards-row">
             {[
               {
                 icon: <FaPhoneAlt />,
@@ -285,144 +269,142 @@ function Contact() {
               </Col>
             ))}
           </Row>
-          <Row
-            className="mt-5 contact-section"
-            style={{ border: "2px solid #4c3b6e", borderRadius: "0" }}
-          >
-            <Col xs={12} md={6} className="mb-4 mb-md-0">
-              <h3 className="section-heading">About Me</h3>
-              <p className="section-text">
-                I'm a passionate developer ready to bring your ideas to life.{" "}
-                <br />
-                Explore my work and let's create something amazing together
-              </p>
-              <div className="contact-image">
-                <img
-                  src={ContactFormImg}
-                  alt="Profile"
-                  className="img-fluid"
-                  style={{ borderRadius: "0" }}
-                />
-              </div>
-              <AnimatedSeparator isVertical={false} />
-            </Col>
-            <Col xs={12} md={6} className="position-relative contact-form-col">
-              <AnimatedSeparator isVertical={true} />
-              <h3 className="section-heading">Get in Touch</h3>
-              <p className="section-text">
-                Whether you have a project in mind or just want to connect,{" "}
-                <br />
-                I'm all ears! Fill out the form below to start the conversation
-              </p>
-              <Form className="contact-form" onSubmit={handleSubmit}>
-                <Form.Group
-                  className="mb-3 form-group-with-icon"
-                  controlId="formName"
-                >
-                  <div className="form-label-with-icon">
-                    <FaUser
-                      className="form-icon"
-                      style={{ marginTop: "-10px" }}
-                    />
-                    <Form.Label className="form-label">Your Name</Form.Label>
-                  </div>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter your name"
-                    required
+          <div className="project-cards">
+            <Animated.div style={cardAnimation} className="project-card glass-bg">
+              <div className="project-ribbon">Contact Me</div>
+              <div className="project-content">
+                <h3 className="section-heading">About Me</h3>
+                <p className="section-text">
+                  I'm a passionate developer ready to bring your ideas to life.{" "}
+                  <br />
+                  Explore my work and let's create something amazing together
+                </p>
+                <div className="contact-image">
+                  <img
+                    src={ContactFormImg}
+                    alt="Profile"
+                    className="img-fluid"
+                    style={{ borderRadius: "0" }}
                   />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3 form-group-with-icon"
-                  controlId="formEmail"
-                >
-                  <div className="form-label-with-icon">
-                    <FaEnvelope
-                      className="form-icon"
-                      style={{ marginTop: "-10px" }}
-                    />
-                    <Form.Label className="form-label">Your Email</Form.Label>
-                  </div>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </Form.Group>
-                <Form.Group
-                  className="mb-3 form-group-with-icon"
-                  controlId="formMessage"
-                >
-                  <div className="form-label-with-icon">
-                    <FaComment
-                      className="form-icon"
-                      style={{ marginTop: "-10px" }}
-                    />
-                    <Form.Label className="form-label">Your Message</Form.Label>
-                  </div>
-                  <Form.Control
-                    as="textarea"
-                    rows={4}
-                    placeholder="Write your message..."
-                    value={message}
-                    onChange={handleMessageChange}
-                    required
-                    style={{ resize: "none" }}
-                  />
-                  <div className="word-count">
-                    {wordCount}/{maxWords} words
-                    {wordCount > maxWords && (
-                      <span className="word-count-error"> (Exceeds limit)</span>
-                    )}
-                  </div>
-                </Form.Group>
-                <Button
-                  variant="light"
-                  type="submit"
-                  className="submit-btn border-0 rounded-0"
-                  disabled={isSubmitting}
-                  style={buttonStyle}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <FaSpinner
-                        className="spin"
-                        style={{ marginRight: "8px" }}
+                </div>
+                <div className="section-divider"></div>
+                <h3 className="section-heading">Get in Touch</h3>
+                <p className="section-text">
+                  Whether you have a project in mind or just want to connect,{" "}
+                  <br />
+                  I'm all ears! Fill out the form below to start the conversation
+                </p>
+                <Form className="contact-form" onSubmit={handleSubmit}>
+                  <Form.Group
+                    className="mb-3 form-group-with-icon"
+                    controlId="formName"
+                  >
+                    <div className="form-label-with-icon">
+                      <FaUser
+                        className="form-icon"
+                        style={{ marginTop: "-10px" }}
                       />
-                      Sending...
-                    </>
-                  ) : (
-                    "Send Message"
-                  )}
-                </Button>
-              </Form>
-              <div className="contact-socials mt-3">
-                <a
-                  seventhirty href="https://wa.me/923484149332"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaWhatsapp />
-                </a>
-                <span className="social-divider">|</span>
-                <a
-                  href="https://www.linkedin.com/in/ali-mehroz-a1ba9a226/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaLinkedin />
-                </a>
-                <span className="social-divider">|</span>
-                <a
-                  href="https://github.com/alymehroz512?tab=overview&from=2024-08-01&to=2024-08-04"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaGithub />
-                </a>
+                      <Form.Label className="form-label">Your Name</Form.Label>
+                    </div>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group
+                    className="mb-3 form-group-with-icon"
+                    controlId="formEmail"
+                  >
+                    <div className="form-label-with-icon">
+                      <FaEnvelope
+                        className="form-icon"
+                        style={{ marginTop: "-10px" }}
+                      />
+                      <Form.Label className="form-label">Your Email</Form.Label>
+                    </div>
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group
+                    className="mb-3 form-group-with-icon"
+                    controlId="formMessage"
+                  >
+                    <div className="form-label-with-icon">
+                      <FaComment
+                        className="form-icon"
+                        style={{ marginTop: "-10px" }}
+                      />
+                      <Form.Label className="form-label">Your Message</Form.Label>
+                    </div>
+                    <Form.Control
+                      as="textarea"
+                      rows={4}
+                      placeholder="Write your message..."
+                      value={message}
+                      onChange={handleMessageChange}
+                      required
+                      style={{ resize: "none" }}
+                    />
+                    <div className="word-count">
+                      {wordCount}/{maxWords} words
+                      {wordCount > maxWords && (
+                        <span className="word-count-error"> ( Exceeds limit)</span>
+                      )}
+                    </div>
+                  </Form.Group>
+                  <Button
+                    variant="light"
+                    type="submit"
+                    className="submit-btn border-0 rounded-0"
+                    disabled={isSubmitting}
+                    style={buttonStyle}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <FaSpinner
+                          className="spin"
+                          style={{ marginRight: "8px" }}
+                        />
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
+                  </Button>
+                </Form>
+                <div className="section-divider"></div>
+                <div className="contact-socials mt-3">
+                  <a
+                    href="https://wa.me/923484149332"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaWhatsapp />
+                  </a>
+                  <span className="social-divider">|</span>
+                  <a
+                    href="https://www.linkedin.com/in/ali-mehroz-a1ba9a226/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaLinkedin />
+                  </a>
+                  <span className="social-divider">|</span>
+                  <a
+                    href="https://github.com/alymehroz512?tab=overview&from=2024-08-01&to=2024-08-04"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaGithub />
+                  </a>
+                </div>
               </div>
-            </Col>
-          </Row>
+            </Animated.div>
+          </div>
           <footer className="footer mt-5">
             <AnimatedHR />
             <p>© {new Date().getFullYear()} Ali Mehroz. All rights reserved.</p>
