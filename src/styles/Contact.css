@@ -342,7 +342,7 @@
 
 .notification {
   position: fixed;
-  top: 20px;
+  top: 80px;
   right: -400px;
   z-index: 9999;
   padding: 1rem 1.5rem;

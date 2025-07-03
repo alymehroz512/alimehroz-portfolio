@@ -23,6 +23,46 @@
   color: #BDB5D5;
 }
 
+.animated-hr {
+  height: 4px;
+  background: linear-gradient(90deg, #BDB5D5, #4c3b6e);
+  margin: 0.5rem auto 2.5rem auto;
+  border: none;
+  border-radius: 0px;
+  width: 80%;
+  transform-origin: center;
+  box-shadow: 0 0 8px rgba(189, 181, 213, 0.6);
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 8px rgba(189, 181, 213, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(76, 59, 110, 0.8);
+  }
+}
+
+.about-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  margin-top: 2rem;
+}
+
+.about-right {
+  min-width: 300px;
+  max-width: 100%;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
 .advanced-accordion .accordion-item {
   background-color: transparent !important;
   color: #4c3b6e;
@@ -52,10 +92,6 @@
   align-items: center;
 }
 
-/* .advanced-accordion .accordion-button:hover {
-  background-color: #d3cbe6 !important;
-} */
-
 .advanced-accordion .accordion-button:not(.collapsed) {
   background-color: #4c3b6e;
   color: #fff;
@@ -75,7 +111,6 @@
   transform: rotate(90deg);
 }
 
-/* ✅ Transparent Accordion Body */
 .accordion-body {
   background-color: transparent !important;
   padding: 1rem 0;
@@ -87,7 +122,6 @@
   position: relative;
 }
 
-/* ✅ Transparent Inner Wrapper */
 .accordion-body-wrapper {
   background-color: transparent !important;
   color: #4c3b6e;
@@ -116,27 +150,6 @@
   color: #4c3b6e;
 }
 
-.animated-hr {
-  height: 4px;
-  background: linear-gradient(90deg, #BDB5D5, #4c3b6e);
-  margin: 0.5rem auto 2.5rem auto;
-  border: none;
-  border-radius: 0px;
-  width: 80%;
-  transform-origin: center;
-  box-shadow: 0 0 8px rgba(189, 181, 213, 0.6);
-  animation: pulseGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 8px rgba(189, 181, 213, 0.5);
-  }
-  100% {
-    box-shadow: 0 0 16px rgba(76, 59, 110, 0.8);
-  }
-}
-/* Remove border-radius for first and last accordion headers */
 .advanced-accordion .accordion-item:first-of-type .accordion-button {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
@@ -147,13 +160,36 @@
   border-bottom-right-radius: 0 !important;
 }
 
-/* Override the accordion button icon (caret) color */
 .advanced-accordion .accordion-button::after {
   color: #fff !important;
-  filter: brightness(0) invert(1); /* Ensures white on darker bg */
+  filter: brightness(0) invert(1);
 }
 
-/* Optional: Rotate when active */
 .advanced-accordion .accordion-button:not(.collapsed)::after {
-  transform: rotate(-180deg); /* Already flips, this ensures clarity */
+  transform: rotate(-180deg);
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+  .about-wrapper {
+    padding: 1rem;
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  .about-left {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .about-image {
+    max-width: 300px;
+  }
 }

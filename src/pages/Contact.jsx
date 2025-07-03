@@ -352,7 +352,7 @@ function Contact() {
                     <div className="word-count">
                       {wordCount}/{maxWords} words
                       {wordCount > maxWords && (
-                        <span className="word-count-error"> ( Exceeds limit)</span>
+                        <span className="word-count-error"> (Exceeds limit)</span>
                       )}
                     </div>
                   </Form.Group>

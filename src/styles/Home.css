@@ -61,14 +61,14 @@
 }
 
 .btn-primary,
-.btn-outline {
+.btn-download {
   transition: all 0.3s ease;
   transform: translateY(0);
   border: 2px solid #4c3b6e;
 }
 
 .btn-primary:hover,
-.btn-outline:hover {
+.btn-download:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
@@ -85,42 +85,38 @@
 }
 
 .btn-primary:hover {
-  border-color: #c9bfdc;
+  border: 2px solid #4c3b6e;
 }
 
-/* --- Outline Button Styles --- */
-.btn-outline {
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #4c3b6e;
-  color: #4c3b6e;
+/* --- Download Button Styles --- */
+.btn-download {
+  background-color: #4c3b6e;
+  color: #fff;
   padding: 10px 22px;
   border-radius: 0px;
   text-decoration: none;
   font-weight: 600;
-  z-index: 1;
-  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn-outline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: #ece8f1;
-  z-index: -1;
-  transition: width 0.4s ease-in-out;
-}
-
-.btn-outline:hover::before {
-  width: 100%;
-}
-
-.btn-outline:hover {
-  color: #4c3b6e;
+.btn-download:hover {
+  color: #fff;
   border-color: #c9bfdc;
+}
+
+.download-animate {
+  animation: downloadBounce 0.6s ease-in-out 2;
+}
+
+@keyframes downloadBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.2);
+  }
 }
 
 /* --- Right Column Styling --- */

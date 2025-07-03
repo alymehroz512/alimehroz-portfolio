@@ -1,10 +1,11 @@
 import React, { useState, useCallback } from 'react';
-import { Accordion, Container } from 'react-bootstrap';
+import { Accordion, Container, Row, Col } from 'react-bootstrap';
 import { useSpring, animated as Animated } from 'react-spring';
 import { FaUser, FaBullseye, FaGraduationCap, FaLightbulb } from 'react-icons/fa';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
 import '../styles/About.css';
+import aboutMe from '../assets/about.svg';
 
 function AnimatedHR() {
   const style = useSpring({
@@ -103,74 +104,85 @@ function About() {
         <Container>
           <h1 className="about-heading mx-1">Frontend & Forward</h1>
           <AnimatedHR />
-          <Accordion activeKey={activeKey} onSelect={setActiveKey} className="about-accordion advanced-accordion">
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>
-                <div className="accordion-header-content">
-                  <FaUser className="accordion-icon" />
-                  <span>Who Am I?</span>
-                </div>
-              </Accordion.Header>
-              <Accordion.Body>
-                <ZoomBody isVisible={activeKey === '0'}>
-                  I’m a detail-oriented frontend developer with a passion for crafting clean, scalable, and responsive web applications. With a background in software engineering and real-world React project experience, I focus on building user-first interfaces that transform designs into seamless digital experiences.
-                </ZoomBody>
-              </Accordion.Body>
-            </Accordion.Item>
+          <Row className="align-items-center">
+            <Col xs={12} md={4} className="about-left order-1 order-md-1">
+              <img
+                src={aboutMe}
+                alt="Developer illustration"
+                className="about-image"
+              />
+            </Col>
+            <Col xs={12} md={8} className="about-right order-2 order-md-2">
+              <Accordion activeKey={activeKey} onSelect={setActiveKey} className="about-accordion advanced-accordion">
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>
+                    <div className="accordion-header-content">
+                      <FaUser className="accordion-icon" />
+                      <span>Who Am I?</span>
+                    </div>
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <ZoomBody isVisible={activeKey === '0'}>
+                      I’m a detail-oriented frontend developer with a passion for crafting clean, scalable, and responsive web applications. With a background in software engineering and real-world React project experience, I focus on building user-first interfaces that transform designs into seamless digital experiences.
+                    </ZoomBody>
+                  </Accordion.Body>
+                </Accordion.Item>
 
-            <Accordion.Item eventKey="1">
-              <Accordion.Header>
-                <div className="accordion-header-content">
-                  <FaBullseye className="accordion-icon" />
-                  <span>Career Goals</span>
-                </div>
-              </Accordion.Header>
-              <Accordion.Body>
-                <ZoomBody isVisible={activeKey === '1'}>
-                  <ul>
-                    <li>Lead frontend initiatives with design-to-code execution</li>
-                    <li>Contribute to scalable component libraries</li>
-                    <li>Improve performance & code quality</li>
-                    <li>Learn and adopt DevOps & testing tools</li>
-                  </ul>
-                </ZoomBody>
-              </Accordion.Body>
-            </Accordion.Item>
+                <Accordion.Item eventKey="1">
+                  <Accordion.Header>
+                    <div className="accordion-header-content">
+                      <FaBullseye className="accordion-icon" />
+                      <span>Career Goals</span>
+                    </div>
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <ZoomBody isVisible={activeKey === '1'}>
+                      <ul>
+                        <li>Lead frontend initiatives with design-to-code execution</li>
+                        <li>Contribute to scalable component libraries</li>
+                        <li>Improve performance & code quality</li>
+                        <li>Learn and adopt DevOps & testing tools</li>
+                      </ul>
+                    </ZoomBody>
+                  </Accordion.Body>
+                </Accordion.Item>
 
-            <Accordion.Item eventKey="2">
-              <Accordion.Header>
-                <div className="accordion-header-content">
-                  <FaGraduationCap className="accordion-icon" />
-                  <span>Education</span>
-                </div>
-              </Accordion.Header>
-              <Accordion.Body>
-                <ZoomBody isVisible={activeKey === '2'}>
-                  <strong>Bachelor’s in Software Engineering</strong><br />
-                  PMAS Arid Agriculture University Rawalpindi – Graduated 2024
-                </ZoomBody>
-              </Accordion.Body>
-            </Accordion.Item>
+                <Accordion.Item eventKey="2">
+                  <Accordion.Header>
+                    <div className="accordion-header-content">
+                      <FaGraduationCap className="accordion-icon" />
+                      <span>Education</span>
+                    </div>
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <ZoomBody isVisible={activeKey === '2'}>
+                      <strong>Bachelor’s in Software Engineering</strong><br />
+                      PMAS Arid Agriculture University Rawalpindi – Graduated 2024
+                    </ZoomBody>
+                  </Accordion.Body>
+                </Accordion.Item>
 
-            <Accordion.Item eventKey="3">
-              <Accordion.Header>
-                <div className="accordion-header-content">
-                  <FaLightbulb className="accordion-icon" />
-                  <span>Hobbies & Interests</span>
-                </div>
-              </Accordion.Header>
-              <Accordion.Body>
-                <ZoomBody isVisible={activeKey === '3'}>
-                  <ul>
-                    <li>Tech blogging and exploring open-source projects</li>
-                    <li>Design to development conversion challenges</li>
-                    <li>UI/UX podcasts and conferences</li>
-                    <li>Gaming, music, and frontend YouTube tutorials</li>
-                  </ul>
-                </ZoomBody>
-              </Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
+                <Accordion.Item eventKey="3">
+                  <Accordion.Header>
+                    <div className="accordion-header-content">
+                      <FaLightbulb className="accordion-icon" />
+                      <span>Hobbies & Interests</span>
+                    </div>
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <ZoomBody isVisible={activeKey === '3'}>
+                      <ul>
+                        <li>Tech blogging and exploring open-source projects</li>
+                        <li>Design to development conversion challenges</li>
+                        <li>UI/UX podcasts and conferences</li>
+                        <li>Gaming, music, and frontend YouTube tutorials</li>
+                      </ul>
+                    </ZoomBody>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </Col>
+          </Row>
         </Container>
       </Animated.div>
     </div>

@@ -93,6 +93,29 @@ const skillCategories = [
     ],
   },
   {
+    title: "Backend Development",
+    skills: [
+      {
+        icon: <FaServer />,
+        title: "Node.js",
+        desc: "Built server-side applications with Node.js.\nUsed event-driven, non-blocking I/O model.\nCreated RESTful APIs with Express.\nManaged packages with npm.\nHandled asynchronous operations effectively.",
+        startYear: 2024,
+      },
+      {
+        icon: <FaDatabase />,
+        title: "MongoDB",
+        desc: "Designed and queried NoSQL databases.\nUsed MongoDB Atlas for cloud storage.\nImplemented CRUD operations.\nStructured schemas for flexible data.\nOptimized queries for performance.",
+        startYear: 2024,
+      },
+      {
+        icon: <FaCogs />,
+        title: "Express.js",
+        desc: "Developed RESTful APIs with Express.\nConfigured middleware for request handling.\nManaged routing and controllers.\nIntegrated with MongoDB for data.\nEnsured secure and scalable backends.",
+        startYear: 2024,
+      },
+    ],
+  },
+  {
     title: "Styling & UI Frameworks",
     skills: [
       {

@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSpring, animated as Animated } from "react-spring";
-import { FiFolder, FiDownload } from "react-icons/fi";
+import { FiFolder, FiDownload, FiDownloadCloud } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
@@ -10,6 +10,7 @@ import developerImage from "../assets/developer.svg";
 
 function Home() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   // Check screen size on mount and resize
   useEffect(() => {
@@ -30,6 +31,12 @@ function Home() {
       mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
+
+  // Handle download button click
+  const handleDownloadClick = () => {
+    setIsDownloading(true);
+    setTimeout(() => setIsDownloading(false), 2000); // Reset after 2 seconds
+  };
 
   const fadeIn = useSpring({
     from: { opacity: 0, transform: "translateY(20px)" },
@@ -133,11 +140,24 @@ function Home() {
               </Link>
               <a
                 href="/Ali Mehroz.pdf"
-                className="btn-outline animated-hover"
+                className="btn-download border-0 rounded-0"
                 download
+                onClick={handleDownloadClick}
               >
-                <FiDownload style={{ marginRight: "8px" }} />
-                Download CV
+                {isDownloading ? (
+                  <>
+                    <FiDownloadCloud
+                      className="download-animate"
+                      style={{ marginRight: "8px" }}
+                    />
+                    Downloading...
+                  </>
+                ) : (
+                  <>
+                    <FiDownload style={{ marginRight: "8px" }} />
+                    Download CV
+                  </>
+                )}
               </a>
             </div>
           </div>
