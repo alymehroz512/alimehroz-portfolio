@@ -207,9 +207,9 @@ function Projects() {
             },
           },
           particles: {
-            color: { value: "#BDB5D5" },
+            color: { value: "#4c3b6e" },
             links: {
-              color: "#BDB5D5",
+              color: "#4c3b6e",
               distance: 150,
               enable: true,
               opacity: 0.5,

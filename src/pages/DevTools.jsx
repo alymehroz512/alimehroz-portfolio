@@ -185,7 +185,7 @@ const tools = [
     name: "Slack",
     description: "Team communication and collaboration",
     version: "Latest (Cloud)",
-    docUrl: "https://slack Bajo .com/help",
+    docUrl: "https://slack.com/help",
   },
   {
     name: "Trello",
@@ -216,8 +216,8 @@ function DevTools() {
     await loadSlim(engine);
   }, []);
 
-  const isIconOnlyWidth = [320, 375, 425].includes(windowWidth);
-  const isShortHeader = windowWidth <= 320;
+  const isIconOnlyWidth = windowWidth <= 425;
+  const isShortHeader = [320, 375, 425].includes(windowWidth);
 
   return (
     <div className="devtools-wrapper position-relative">
@@ -238,9 +238,9 @@ function DevTools() {
             },
           },
           particles: {
-            color: { value: "#BDB5D5" },
+            color: { value: "#4c3b6e" },
             links: {
-              color: "#BDB5D5",
+              color: "#4c3b6e",
               distance: 150,
               enable: true,
               opacity: 0.5,

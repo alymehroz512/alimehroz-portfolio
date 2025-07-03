@@ -57,18 +57,6 @@
 }
 
 /* Card styling */
-.modern-skill-card {
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 6px rgba(76, 59, 110, 0.1);
-  cursor: pointer;
-}
-
-.modern-skill-card:hover {
-  transform: translateY(-5px);
-  background: rgba(189, 181, 213, 0.3);
-  box-shadow: 0 0 15px rgba(189, 181, 213, 0.7);
-  cursor: pointer;
-}
 
 /* Icon */
 .skill-icon-container {
@@ -87,10 +75,6 @@
   height: 48px;
   background: #e6e0f0;
   border-radius: 0px;
-}
-
-.modern-skill-card:hover .skill-icon-wrapper {
-  box-shadow: 0 0 10px rgba(76, 59, 110, 0.6);
 }
 
 /* Content */
@@ -127,8 +111,7 @@
 
 .skill-experience:hover {
   transform: scale(1.05);
-  background: #BDB5D5;
-  color: #fff;
+  box-shadow: 0 2px 4px rgba(76, 59, 110, 0.2);
 }
 
 /* HR line inside cards */
@@ -150,5 +133,33 @@
     width: 100%;
     opacity: 1;
   }
+}
+
+/* Add this to the bottom of Skills.css */
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.skill-card:hover .skill-icon-wrapper {
+  animation: spin 1s linear infinite;
+}
+
+/* Icon hover spin and shadow */
+.skill-card:hover .skill-icon-wrapper {
+  animation: spin 1s linear infinite;
+  box-shadow: 0 4px 12px rgba(76, 59, 110, 0.4); /* purple shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Experience text hover shadow */
+.skill-card:hover .skill-experience {
+  box-shadow: 0 2px 8px rgba(76, 59, 110, 0.4); /* subtle shadow */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-card {
+  margin-bottom: 1.5rem; /* You can adjust this value as needed */
 }
 

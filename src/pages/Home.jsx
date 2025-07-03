@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSpring, animated as Animated } from "react-spring";
 import { FiFolder, FiDownload } from "react-icons/fi";
@@ -9,6 +9,28 @@ import "../styles/Home.css";
 import developerImage from "../assets/developer.svg";
 
 function Home() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  // Check screen size on mount and resize
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 320px)");
+
+    // Set initial state
+    setIsSmallScreen(mediaQuery.matches);
+
+    // Handle resize
+    const handleResize = (e) => {
+      setIsSmallScreen(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleResize);
+
+    // Cleanup listener on unmount
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+    };
+  }, []);
+
   const fadeIn = useSpring({
     from: { opacity: 0, transform: "translateY(20px)" },
     to: { opacity: 1, transform: "translateY(0)" },
@@ -38,9 +60,9 @@ function Home() {
             },
           },
           particles: {
-            color: { value: "#BDB5D5" },
+            color: { value: "#4c3b6e" },
             links: {
-              color: "#BDB5D5",
+              color: "#4c3b6e",
               distance: 150,
               enable: true,
               opacity: 0.5,
@@ -79,13 +101,17 @@ function Home() {
 
           <div className="col-12 col-md-8 home-left order-2 order-lg-1">
             <h1 className="home-heading">
-              <TypeAnimation
-                sequence={["Hi, I’m Ali Mehroz", 2000, "", 500]}
-                speed={50}
-                wrapper="span"
-                cursor={true}
-                repeat={Infinity}
-              />
+              {isSmallScreen ? (
+                <span>Hi, I’m Ali Mehroz</span>
+              ) : (
+                <TypeAnimation
+                  sequence={["Hi, I’m Ali Mehroz", 2000, "", 500]}
+                  speed={50}
+                  wrapper="span"
+                  cursor={true}
+                  repeat={Infinity}
+                />
+              )}
             </h1>
 
             <p className="home-subheading">React JS Frontend Developer</p>
@@ -106,7 +132,7 @@ function Home() {
                 View Projects
               </Link>
               <a
-                href="../../public/Ali Mehroz.pdf"
+                href="/Ali Mehroz.pdf"
                 className="btn-outline animated-hover"
                 download
               >

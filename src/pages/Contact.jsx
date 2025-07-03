@@ -195,9 +195,9 @@ function Contact() {
             },
           },
           particles: {
-            color: { value: "#BDB5D5" },
+            color: { value: "#4c3b6e" },
             links: {
-              color: "#BDB5D5",
+              color: "#4c3b6e",
               distance: 150,
               enable: true,
               opacity: 0.5,
@@ -406,7 +406,7 @@ function Contact() {
                 </a>
                 <span className="social-divider">|</span>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/ali-mehroz-a1ba9a226/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -414,7 +414,7 @@ function Contact() {
                 </a>
                 <span className="social-divider">|</span>
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/alymehroz512?tab=overview&from=2024-08-01&to=2024-08-04"
                   target="_blank"
                   rel="noreferrer"
                 >
