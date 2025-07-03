@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+.particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.devtools-wrapper {
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.devtools-heading {
+  color: #BDB5D5;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.animated-hr {
+  border: none;
+  height: 4px;
+  background: linear-gradient(90deg, #BDB5D5, #4c3b6e);
+  margin: 0.5rem auto 2.5rem auto;
+  border-radius: 0;
+  width: 80%;
+  transform-origin: center;
+  box-shadow: 0 0 8px rgba(189, 181, 213, 0.6);
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 8px rgba(189, 181, 213, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(76, 59, 110, 0.8);
+  }
+}
+
+/* Transparent table style */
+.devtools-table {
+  background: rgba(255, 255, 255, 0);
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: center;
+}
+
+/* Table heading styles to match data cells */
+.devtools-table th {
+  background-color: #4c3b6e !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem;
+  vertical-align: middle;
+  border: none;
+  height: auto;
+  width: auto;
+  margin: 0;
+}
+
+/* Table data cell styles */
+.devtools-table td {
+  background-color: transparent !important;
+  padding: 1rem;
+  vertical-align: middle;
+  border: none;
+  color: #ffffff;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.devtools-table tr:last-child td {
+  border-bottom: none;
+}
+
+.devtools-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.devtools-table .btn-outline-light {
+  border-color: #BDB5D5;
+  color: #4c3b6e;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.devtools-table .btn-outline-light:hover {
+  background-color: #4c3b6e;
+  color: #fff;
+}
+
+/* Remove all borders by default */
+.devtools-table td,
+.devtools-table th {
+  border: none !important;
+}
+
+/* Add bottom border between rows (mid horizontal lines only) */
+.devtools-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+/* Remove top border from the header */
+.devtools-table thead tr th {
+  border-top: none !important;
+}
+
+/* Add right border to first, second, and third columns */
+.devtools-table td:nth-child(1),
+.devtools-table th:nth-child(1),
+.devtools-table td:nth-child(2),
+.devtools-table th:nth-child(2),
+.devtools-table td:nth-child(3),
+.devtools-table th:nth-child(3) {
+  border-right: 1px solid #dee2e6 !important;
+}
+
+/* Hide the Description column and style button for icon-only display on small screens (320px, 375px, 425px) */
+@media (max-width: 425px) {
+  .devtools-table th:nth-child(2),
+  .devtools-table td:nth-child(2) {
+    display: none;
+  }
+  .devtools-table td:nth-child(4) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+  .devtools-table .btn-outline-light {
+    padding: 0.3rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .learn-icon {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Ensure learn-icon has margin on larger screens */
+@media (min-width: 426px) {
+  .learn-icon {
+    margin-right: 6px;
+  }
+}

@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+.particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.projects-wrapper {
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.projects-heading {
+  color: #BDB5D5;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.project-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.project-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(189, 181, 213, 0.2) 100%);
+  box-shadow: 0 4px 24px rgba(76, 59, 110, 0.15);
+  padding: 2.5rem 2rem;
+  margin: 2rem 0;
+  position: relative;
+  cursor: pointer;
+  /* border-radius: 12px; */
+  border: 2px solid #4c3b6e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 32px rgba(76, 59, 110, 0.25);
+}
+
+.glass-bg {
+  background: transparent;
+}
+
+.project-ribbon {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  background: #4c3b6e;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.08rem;
+  padding: 0.55rem 2.2rem 0.55rem 1.3rem;
+  box-shadow: 0 4px 16px rgba(76, 59, 110, 0.13);
+  z-index: 3;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-ribbon::after {
+  content: '';
+  position: absolute;
+  right: -18px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 24px solid #4c3b6e;
+  border-right: 18px solid transparent;
+  z-index: 2;
+}
+
+.project-ribbon::before {
+  content: '';
+  position: absolute;
+  right: -18px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 24px solid rgba(0, 0, 0, 0.08);
+  border-right: 18px solid transparent;
+  z-index: 1;
+  filter: blur(1px);
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4c3b6e;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.project-quote {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #4c3b6e;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.project-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4c3b6e;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.project-description,
+.project-features,
+.project-tech {
+  margin-bottom: 1rem;
+  padding-left: 1.2rem;
+  color: #4c3b6e;
+}
+
+.project-description li,
+.project-features li,
+.project-tech li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
+}
+
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, #BDB5D5, #4c3b6e);
+  width: 50%;
+  margin: 1rem auto;
+  border: none;
+  opacity: 0.7;
+}
+
+.project-github-container {
+  text-align: left;
+}
+
+.github-icon-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  color: #fff;
+  background-color: #4c3b6e;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s;
+  max-width: 200px;
+}
+
+.github-icon-link:hover {
+  transform: scaleX(1);
+}
+
+.github-icon-link:hover {
+  box-shadow: 0 4px 8px rgba(76, 59, 110, 0.3);
+}
+
+.github-text {
+  margin-left: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #4c3b6e;
+}
+.github-text.disabled {
+  color: #fff;
+}
+
+
+.animated-hr {
+  height: 4px;
+  background: linear-gradient(90deg, #BDB5D5, #4c3b6e);
+  margin: 0.5rem auto 2.5rem auto;
+  border: none;
+  width: 80%;
+  transform-origin: center;
+  box-shadow: 0 0 8px rgba(189, 181, 213, 0.6);
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+.projects-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.footer-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4c3b6e;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.footer-des {
+  color: #4c3b6e;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #4c3b6e;
+  font-size: 0.9rem;
+}
+
+.footer-icon-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem;
+  color: #4c3b6e;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.footer-icon-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.footer-icon-link:hover {
+  box-shadow: 0 4px 8px rgba(76, 59, 110, 0.3);
+}
+
+.footer-pipe {
+  color: #4c3b6e;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 8px rgba(189, 181, 213, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(76, 59, 110, 0.8);
+  }
+}
+
+@media (max-width: 767px) {
+  .project-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .project-ribbon {
+    font-size: 0.92rem;
+    padding: 0.35rem 1.2rem 0.35rem 0.7rem;
+    top: -10px;
+    left: -7px;
+  }
+
+  .project-ribbon::after,
+  .project-ribbon::before {
+    border-top-width: 16px;
+    border-right-width: 12px;
+    right: -12px;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .project-description li,
+  .project-quote,
+  .project-features li,
+  .project-tech li {
+    font-size: 0.9rem;
+  }
+
+  .project-section-title {
+    font-size: 1.1rem;
+  }
+
+  .github-icon-link {
+    padding: 0.3rem 0.6rem;
+    max-width: 100px;
+  }
+
+  .github-text {
+    font-size: 0.8rem;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-icon-link {
+    padding: 0.3rem 0.6rem;
+  }
+
+  .footer-heading {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .project-ribbon {
+    font-size: 0.8rem;
+    padding: 0.3rem 1rem 0.3rem 0.6rem;
+    top: -8px;
+    left: -5px;
+  }
+
+  .project-ribbon::after,
+  .project-ribbon::before {
+    border-top-width: 14px;
+    border-right-width: 10px;
+    right: -10px;
+  }
+
+  .github-text {
+    font-size: 0.75rem;
+  }
+
+  .footer-content {
+    font-size: 0.8rem;
+  }
+
+  .footer-heading {
+    font-size: 1.2rem;
+  }
+}

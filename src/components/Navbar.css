@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+.custom-navbar {
+  background-color: #BDB5D5 !important;
+  font-family: 'Quicksand';
+  padding: 0.75rem 1rem;
+  border-bottom: 5px solid #4c3b6e;
+    /* These make the fixed navbar behave cleanly */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+  backdrop-filter: blur(8px); /* optional glassmorphism effect */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* subtle shadow */
+}
+
+.navbar-brand-text {
+  color: white !important;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.nav-center .nav-link {
+  color: white !important;
+  margin: 0 6px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 0px;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nav-center .nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.nav-center .nav-link:hover::before,
+.nav-center .nav-link.active-link::before {
+  width: 100%;
+}
+
+.nav-center .nav-link:hover,
+.nav-center .nav-link.active-link {
+  color: #4c3b6e !important;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.custom-toggler {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0.25rem;
+}
+
+.custom-bars-icon {
+  font-size: 1.6rem;
+  color: white;
+}
+
+/* Social Icons Shared */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon-link {
+  color: white;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: #4c3b6e;
+}
+
+/* For Desktop */
+.d-none.d-lg-flex {
+  margin-left: auto;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .nav-center {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .social-icons-mobile {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}
