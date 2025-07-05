@@ -342,10 +342,10 @@
 
 .notification {
   position: fixed;
-  top: 80px;
-  right: 20px;
+  bottom: 10px;
+  right: 10px;
   z-index: 9999;
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1rem;
   border-radius: 4px;
   font-weight: 600;
   display: flex;
@@ -353,8 +353,9 @@
   color: #fff;
   animation: slideIn 0.6s forwards;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 90%;
-  width: 400px;
+  width: calc(100% - 20px);
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 .notification.success {
@@ -371,10 +372,13 @@
   gap: 0.8rem;
   font-size: 1rem;
   flex-wrap: wrap;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .notify-icon {
   font-size: 1.3rem;
+  flex-shrink: 0;
 }
 
 @keyframes slideIn {
@@ -383,12 +387,12 @@
     opacity: 0;
   }
   to {
-    right: 20px;
+    right: 10px;
     opacity: 1;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .project-card {
     padding: 1.5rem 1rem;
   }
@@ -429,9 +433,9 @@
   }
 
   .notification {
-    top: 20px;
+    bottom: 10px;
     right: 10px;
-    width: 90%;
+    width: calc(100% - 20px);
     max-width: 350px;
     padding: 0.8rem 1rem;
   }
@@ -465,9 +469,9 @@
   }
 
   .notification {
-    top: 10px;
+    bottom: 5px;
     right: 5px;
-    width: 95%;
+    width: calc(100% - 10px);
     max-width: 300px;
     padding: 0.6rem 0.8rem;
   }
@@ -478,5 +482,41 @@
 
   .notify-icon {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .notification {
+    bottom: 5px;
+    right: 5px;
+    width: calc(100% - 10px);
+    max-width: 280px;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .notification-content {
+    font-size: 0.8rem;
+  }
+
+  .notify-icon {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .notification {
+    bottom: 5px;
+    right: 5px;
+    width: calc(100% - 10px);
+    max-width: 260px;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .notification-content {
+    font-size: 0.75rem;
+  }
+
+  .notify-icon {
+    font-size: 0.85rem;
   }
 }
