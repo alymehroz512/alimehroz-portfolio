@@ -152,10 +152,10 @@ function Contact() {
         <div className={`notification ${notification.type}`}>
           <div className="notification-content">
             {notification.type === "success" && (
-              <FaCheckCircle className="notify-icon spin" />
+              <FaCheckCircle className="notify-icon" />
             )}
             {notification.type === "error" && (
-              <FaExclamationCircle className="notify-icon spin" />
+              <FaExclamationCircle className="notify-icon" />
             )}
             <span>{notification.message}</span>
           </div>
