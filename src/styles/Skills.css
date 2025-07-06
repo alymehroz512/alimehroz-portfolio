@@ -111,7 +111,7 @@
 
 .skill-experience:hover {
   transform: scale(1.05);
-  box-shadow: 0 2px 4px rgba(76, 59, 110, 0.2);
+  box-shadow: 0 2px 8px rgba(76, 59, 110, 0.4);
 }
 
 /* HR line inside cards */
@@ -135,8 +135,6 @@
   }
 }
 
-/* Add this to the bottom of Skills.css */
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -144,21 +142,15 @@
 
 .skill-card:hover .skill-icon-wrapper {
   animation: spin 1s linear infinite;
-}
-
-/* Icon hover spin and shadow */
-.skill-card:hover .skill-icon-wrapper {
-  animation: spin 1s linear infinite;
-  box-shadow: 0 4px 12px rgba(76, 59, 110, 0.4); /* purple shadow */
+  box-shadow: 0 4px 12px rgba(76, 59, 110, 0.4);
   transition: box-shadow 0.3s ease;
 }
 
-/* Experience text hover shadow */
 .skill-card:hover .skill-experience {
-  box-shadow: 0 2px 8px rgba(76, 59, 110, 0.4); /* subtle shadow */
+  box-shadow: 0 2px 8px rgba(76, 59, 110, 0.4);
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .skill-card {
-  margin-bottom: 1.5rem; /* You can adjust this value as needed */
+  margin-bottom: 1.5rem;
 }

@@ -202,7 +202,7 @@ const skillCategories = [
       {
         icon: <FaGithub />,
         title: "GitHub",
-        desc: "Hosted repositories and projects.\nCollaborated using pull requests.\nManaged issues and project boards.\nSet up GitHub Actions for CI/CD.\nUsed forks and clone operations.",
+        desc: "Hosted repositories and projects.\nCollaborated using pull requests.\nManaged issues and project boards.\nSet up GitHub Actions for CI/ CD.\nUsed forks and clone operations.",
         startYear: 2022,
       },
       {
@@ -221,7 +221,7 @@ const skillCategories = [
         icon: <FaCode />,
         title: "Visual Studio Code",
         desc: "Used as primary code editor.\nLeveraged extensions for productivity.\nConfigured debugging and linting.\nManaged tasks and snippets.\nIntegrated with Git and terminals.",
-        startYear: 2022,
+        startYear: 2024,
       },
     ],
   },
@@ -351,7 +351,7 @@ function Skills() {
         options={{
           fullScreen: { enable: false },
           background: { color: { value: "#ffffff" } },
-          fpsLimit: 60,
+          fpsLimit: 120,
           interactivity: {
             events: {
               onHover: { enable: true, mode: "repulse" },
@@ -379,7 +379,7 @@ function Skills() {
               outModes: { default: "bounce" },
             },
             number: {
-              value: 50,
+              value: 40,
               density: { enable: true, area: 800 },
             },
             opacity: { value: 0.5 },
