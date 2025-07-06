@@ -13,6 +13,9 @@
   min-height: 100vh;
   padding: 3rem 1.5rem;
   font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-heading {
@@ -45,23 +48,10 @@
   }
 }
 
-.about-left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 250px;
-  margin-top: 2rem;
-}
-
-.about-right {
-  min-width: 300px;
-  max-width: 100%;
-}
-
-.about-image {
+.accordion-container {
+  max-width: 800px;
   width: 100%;
-  max-width: 400px;
-  height: auto;
+  margin: 0 auto;
 }
 
 .advanced-accordion .accordion-item {
@@ -176,21 +166,12 @@
     padding: 1rem;
   }
 
-  .about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0;
+  .about-heading {
+    font-size: 2rem;
   }
 
-  .about-left {
-    margin-top: 0;
-    margin-bottom: 2rem;
-  }
-
-  .about-image {
-    max-width: 300px;
+  .accordion-container {
+    max-width: 100%;
+    padding: 0 1rem;
   }
 }
