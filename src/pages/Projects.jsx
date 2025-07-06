@@ -25,16 +25,16 @@ const projects = [
       "Currently developing a fully responsive Admin Dashboard using React JS, Redux Toolkit, and Axios for managing user data, system settings, and analytics. Architecting dynamic modules for data visualization, system configuration, and secure admin-level operations. Integrating RESTful APIs with Redux for real-time data handling and optimized user experience. Ensuring component scalability with modular UI structure and responsive layout. Wrote unit and integration tests using Jest, ensuring robust, regression-free code.",
     quote: "Empowering businesses with robust solutions.",
     features: [
-      "Authrication and Authorization via JWT and Cookies",
-      "Dashboard option where admin have details about the active users, users with wallts, users with gens and different chrats of monthly transaction etc",
-      "Application Configuration where admin handel whole application configurations and change according to the needs",
+      "Authentication and Authorization via JWT and Cookies",
+      "Dashboard option where admin have details about the active users, users with wallets, users with gens and different charts of monthly transaction etc",
+      "Application Configuration where admin handle whole application configurations and change according to the needs",
       "Application Status shows the frontend, backend and blockchain is working or not and it changes its status after every five minutes according to whole application",
       "Transaction Details View (Bridge) to see the details of transaction users have done in polkadot to ethereum and ethereum to polkadot",
       "Test Results where admin will be able to see the test reports result for the both PGX & Blood. Admin can handle all test result for their approval and rejections",
       "User modules have created where admin will be able to manage the whole users. Users are Patients, Researchers, Managers. Admin will create different managers and many more",
     ],
     tech: [
-      "React.js for reuselbe components etc",
+      "React.js for reusable components etc",
       "Redux Toolkit for state management",
       "Axios for fetching data",
       "CSS and Bootstrap for responsive styling and layout",
@@ -47,7 +47,7 @@ const projects = [
     title: "Task-Flow Application",
     status: "Completed",
     description:
-      "A Trello-inspired task management system with user authentication , boards, folders, and task creation with status filters. Designed task status indicators (Pending, Active, Complete, Delete) with real-time UI updates with success / alerting notifications. Enabled secure and scalable RESTful API interaction with Axios.",
+      "A Trello-inspired task management system with user authentication, boards, folders, and task creation with status filters. Designed task status indicators (Pending, Active, Complete, Delete) with real-time UI updates with success/alerting notifications. Enabled secure and scalable RESTful API interaction with Axios.",
     quote: "Organize tasks with seamless flow.",
     features: [
       "Kanban-style task boards",
@@ -56,7 +56,7 @@ const projects = [
       "Task status filters",
     ],
     tech: [
-      "React.js for reuselbe components etc",
+      "React.js for reusable components etc",
       "Redux Toolkit for state management",
       "Axios for fetching data",
       "CSS and Bootstrap for responsive styling and layout",
@@ -68,7 +68,7 @@ const projects = [
     title: "Portfolio-Website",
     status: "Completed",
     description:
-      "This project is a responsive portfolio website. It features a modern design with sections for showcasing projects, skills, and professional experience. The site is fully responsive, ensuring an optimal viewing experience across all devices. Ideal for developers and Grado de confidencialidad: Público y creatives looking to highlight their work online, with animated sections and downloadable resume.",
+      "This project is a responsive portfolio website. It features a modern design with sections for showcasing projects, skills, and professional experience. The site is fully responsive, ensuring an optimal viewing experience across all devices. Ideal for developers and creatives looking to highlight their work online, with animated sections and downloadable resume.",
     quote: "Showcasing skills with style.",
     features: [
       "Responsive personal portfolio",
@@ -102,7 +102,7 @@ const projects = [
     tech: [
       "MongoDB for database (Non-Relational)",
       "Express.js for middleware",
-      "React.js for reuselbe components etc",
+      "React.js for reusable components etc",
       "Node.js for backend",
       "Tailwind css for responsive layouts",
       "GitHub",
@@ -196,7 +196,7 @@ function Projects() {
         options={{
           fullScreen: { enable: false },
           background: { color: { value: "#ffffff" } },
-          fpsLimit: 60,
+          fpsLimit: 120,
           interactivity: {
             events: {
               onHover: { enable: true, mode: "repulse" },
@@ -224,7 +224,7 @@ function Projects() {
               outModes: { default: "bounce" },
             },
             number: {
-              value: 50,
+              value: 40,
               density: { enable: true, area: 800 },
             },
             opacity: { value: 0.5 },
@@ -296,7 +296,7 @@ function Projects() {
                       {!isIconOnlyWidth && (
                         <span
                           style={{
-                            marginLeft: '0.4rem',
+                            margin: '0.4rem',
                             fontSize: '0.9rem',
                             fontWeight: 600,
                             backgroundColor: '#4c3b6e',
