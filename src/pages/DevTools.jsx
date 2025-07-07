@@ -111,7 +111,7 @@ const tools = [
   {
     name: "Responsive Design",
     description: "Adapting layouts for various devices",
-    version: "N/A",
+    version: "Media Qureis and Flexbox (Latest)",
     docUrl:
       "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Responsive/responsive_design",
   },
