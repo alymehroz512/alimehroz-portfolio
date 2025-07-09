@@ -166,7 +166,7 @@ export default function Experience() {
                   <span>Hybrid</span>
                 </>
               }
-              ribbon={getResponsiveRibbon('Professional Experience No. 1', 'Exp No. 1')}
+              ribbon={getResponsiveRibbon('Professional Experience No. 1', 'Pro Exp No. 1')}
             >
               <ul style={listStyle}>
                 <li>
