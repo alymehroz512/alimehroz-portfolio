@@ -173,7 +173,7 @@ const skillCategories = [
       {
         icon: <FaShareAlt />,
         title: "Context API",
-        desc: "Shared global state across components.\nAvoided prop drilling in deep trees.\nUsed useContext for state consumption.\nCreated custom context providers.\nImproved app modularity.",
+        desc: "Shared global state across kjerky components.\nAvoided prop drilling in deep trees.\nUsed useContext for state consumption.\nCreated custom context providers.\nImproved app modularity.",
         startYear: 2024,
       },
       {
@@ -202,7 +202,7 @@ const skillCategories = [
       {
         icon: <FaGithub />,
         title: "GitHub",
-        desc: "Hosted repositories and projects.\nCollaborated using pull requests.\nManaged issues and project boards.\nSet up GitHub Actions for CI/ CD.\nUsed forks and clone operations.",
+        desc: "Hosted repositories and projects.\nCollaborated using pull requests.\nManaged issues and project boards.\nSet up GitHub Actions for CI/CD.\nUsed forks and clone operations.",
         startYear: 2022,
       },
       {
@@ -343,51 +343,54 @@ function Skills() {
     await loadSlim(engine);
   }, []);
 
+  const particlesOptions = {
+    fullScreen: { enable: false },
+    background: { color: { value: "#ffffff" } },
+    fpsLimit: 60, // Reduced from 120 to improve performance
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "repulse" },
+        resize: { enable: true },
+      },
+      modes: {
+        repulse: { distance: 80, duration: 0.4 }, // Reduced distance for less intensive interaction
+      },
+    },
+    particles: {
+      color: { value: "#4c3b6e" },
+      links: {
+        color: "#4c3b6e",
+        distance: 120, // Reduced from 150
+        enable: true,
+        opacity: 0.4, // Slightly reduced opacity
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 1, // Reduced from 1.5
+        direction: "none",
+        random: false,
+        straight: false,
+        outModes: { default: "bounce" },
+      },
+      number: {
+        value: 25, // Reduced from 40 to improve performance
+        density: { enable: true, area: 1000 }, // Increased area for better distribution
+      },
+      opacity: { value: 0.4 }, // Slightly reduced
+      shape: { type: "circle" },
+      size: { value: { min: 1, max: 4 } }, // Slightly reduced max size
+    },
+    detectRetina: true,
+    pauseOnOutsideViewport: true, // Pause animation when not in view
+  };
+
   return (
     <div className="skills-wrapper position-relative">
       <Particles
         id="tsparticles"
         init={particlesInit}
-        options={{
-          fullScreen: { enable: false },
-          background: { color: { value: "#ffffff" } },
-          fpsLimit: 120,
-          interactivity: {
-            events: {
-              onHover: { enable: true, mode: "repulse" },
-              resize: true,
-            },
-            modes: {
-              repulse: { distance: 100, duration: 0.4 },
-            },
-          },
-          particles: {
-            color: { value: "#4c3b6e" },
-            links: {
-              color: "#4c3b6e",
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 1.5,
-              direction: "none",
-              random: false,
-              straight: false,
-              outModes: { default: "bounce" },
-            },
-            number: {
-              value: 40,
-              density: { enable: true, area: 800 },
-            },
-            opacity: { value: 0.5 },
-            shape: { type: "circle" },
-            size: { value: { min: 1, max: 5 } },
-          },
-          detectRetina: true,
-        }}
+        options={particlesOptions}
         className="particles-bg"
       />
       <Animated.div
