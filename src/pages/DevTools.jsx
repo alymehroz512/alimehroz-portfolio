@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Container, Table, Button } from "react-bootstrap";
 import { useSpring, animated as Animated } from "react-spring";
-import { FaBookOpen } from "react-icons/fa";
+import { FaBookOpen, FaChevronUp } from "react-icons/fa";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import "../styles/DevTools.css";
@@ -197,6 +197,7 @@ const tools = [
 
 function DevTools() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const handleResize = () => setWindowWidth(window.innerWidth);
 
@@ -205,6 +206,25 @@ function DevTools() {
     setWindowWidth(window.innerWidth);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Handle scroll event to show/hide scroll-to-top button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Function to scroll to top smoothly
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const fadeIn = useSpring({
     from: { opacity: 0, transform: "translateY(20px)" },
@@ -327,6 +347,15 @@ function DevTools() {
           </Table>
         </Container>
       </Animated.div>
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="scroll-top-button"
+          title="Scroll to Top"
+        >
+          <FaChevronUp />
+        </button>
+      )}
     </div>
   );
 }

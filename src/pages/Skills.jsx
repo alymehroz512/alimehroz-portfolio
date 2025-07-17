@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { useSpring, animated as Animated } from "react-spring";
 import {
@@ -31,6 +31,7 @@ import {
   FaUniversalAccess,
   FaCheckCircle,
   FaCode,
+  FaChevronUp,
 } from "react-icons/fa";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
@@ -343,46 +344,67 @@ function Skills() {
     await loadSlim(engine);
   }, []);
 
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Handle scroll event to show/hide scroll-to-top button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Function to scroll to top smoothly
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const particlesOptions = {
     fullScreen: { enable: false },
     background: { color: { value: "#ffffff" } },
-    fpsLimit: 60, // Reduced from 120 to improve performance
+    fpsLimit: 60,
     interactivity: {
       events: {
         onHover: { enable: true, mode: "repulse" },
         resize: { enable: true },
       },
       modes: {
-        repulse: { distance: 80, duration: 0.4 }, // Reduced distance for less intensive interaction
+        repulse: { distance: 80, duration: 0.4 },
       },
     },
     particles: {
       color: { value: "#4c3b6e" },
       links: {
         color: "#4c3b6e",
-        distance: 120, // Reduced from 150
+        distance: 120,
         enable: true,
-        opacity: 0.4, // Slightly reduced opacity
+        opacity: 0.4,
         width: 1,
       },
       move: {
         enable: true,
-        speed: 1, // Reduced from 1.5
+        speed: 1,
         direction: "none",
         random: false,
         straight: false,
         outModes: { default: "bounce" },
       },
       number: {
-        value: 25, // Reduced from 40 to improve performance
-        density: { enable: true, area: 1000 }, // Increased area for better distribution
+        value: 25,
+        density: { enable: true, area: 1000 },
       },
-      opacity: { value: 0.4 }, // Slightly reduced
+      opacity: { value: 0.4 },
       shape: { type: "circle" },
-      size: { value: { min: 1, max: 4 } }, // Slightly reduced max size
+      size: { value: { min: 1, max: 4 } },
     },
     detectRetina: true,
-    pauseOnOutsideViewport: true, // Pause animation when not in view
+    pauseOnOutsideViewport: true,
   };
 
   return (
@@ -447,6 +469,15 @@ function Skills() {
           ))}
         </Container>
       </Animated.div>
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="scroll-top-button"
+          title="Scroll to Top"
+        >
+          <FaChevronUp />
+        </button>
+      )}
     </div>
   );
 }

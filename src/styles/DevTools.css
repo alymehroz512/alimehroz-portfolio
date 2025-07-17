@@ -140,6 +140,34 @@
   border-right: 1px solid #dee2e6 !important;
 }
 
+.scroll-top-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #4c3b6e;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(76, 59, 110, 0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0.9;
+  z-index: 1000;
+}
+
+.scroll-top-button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.scroll-top-button svg {
+  font-size: 1.2rem;
+}
+
 /* Hide the Description column and style button for icon-only display on small screens (320px, 375px, 425px) */
 @media (max-width: 425px) {
   .devtools-wrapper {
@@ -178,6 +206,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .scroll-top-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .scroll-top-button svg {
+    font-size: 1rem;
   }
 }
 

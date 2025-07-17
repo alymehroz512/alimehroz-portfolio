@@ -181,7 +181,7 @@
 }
 
 .github-button:hover {
-  background: #5b4a8a; /* Slightly lighter shade for hover */
+  background: #5b4a8a;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(76, 59, 110, 0.4);
 }
@@ -203,6 +203,34 @@
   transform-origin: center;
   box-shadow: 0 0 8px rgba(189, 181, 213, 0.6);
   animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+.scroll-top-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #4c3b6e;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(76, 59, 110, 0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0.9;
+  z-index: 1000;
+}
+
+.scroll-top-button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.scroll-top-button svg {
+  font-size: 1.2rem;
 }
 
 .projects-footer {
@@ -335,6 +363,17 @@
 
   .github-button .github-text {
     font-size: 0.8rem;
+  }
+
+  .scroll-top-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .scroll-top-button svg {
+    font-size: 1rem;
   }
 }
 

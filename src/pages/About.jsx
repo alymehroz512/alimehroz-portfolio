@@ -1,7 +1,7 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Accordion, Container } from 'react-bootstrap';
 import { useSpring, animated as Animated } from 'react-spring';
-import { FaUser, FaBullseye, FaGraduationCap, FaLightbulb } from 'react-icons/fa';
+import { FaUser, FaBullseye, FaGraduationCap, FaLightbulb, FaChevronUp } from 'react-icons/fa';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
 import '../styles/About.css';
@@ -46,10 +46,30 @@ function About() {
   });
 
   const [activeKey, setActiveKey] = useState('0');
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
   }, []);
+
+  // Handle scroll event to show/hide scroll-to-top button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Function to scroll to top smoothly
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="about-wrapper position-relative">
@@ -131,7 +151,7 @@ function About() {
                 </Accordion.Header>
                 <Accordion.Body>
                   <ZoomBody isVisible={activeKey === '1'}>
-                    <ul>
+                    <ul style={{marginTop: '10px'}}>
                       <li>Lead frontend initiatives with design-to-code execution</li>
                       <li>Contribute to scalable component libraries</li>
                       <li>Improve performance & code quality</li>
@@ -165,7 +185,7 @@ function About() {
                 </Accordion.Header>
                 <Accordion.Body>
                   <ZoomBody isVisible={activeKey === '3'}>
-                    <ul>
+                    <ul style={{marginTop: '10px'}}>
                       <li>Tech blogging and exploring open-source projects</li>
                       <li>Design to development conversion challenges</li>
                       <li>UI/UX podcasts and conferences</li>
@@ -178,6 +198,16 @@ function About() {
           </div>
         </Container>
       </Animated.div>
+
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="scroll-top-button"
+          title="Scroll to Top"
+        >
+          <FaChevronUp />
+        </button>
+      )}
     </div>
   );
 }
