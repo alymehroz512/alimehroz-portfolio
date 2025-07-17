@@ -273,6 +273,9 @@ function DevTools() {
         <Container>
           <h1 className="devtools-heading">Dev Bag</h1>
           <AnimatedHR />
+          <p className="devtools-intro">
+            My development toolkit encompasses a wide range of modern technologies and platforms, enabling me to build robust, scalable, and user-friendly applications. From databases and frameworks to testing and deployment tools, I leverage these resources to deliver high-quality solutions efficiently.
+          </p>
           <Table
             responsive
             className="devtools-table glass-bg table-striped table-responsive-sm table-responsive-md table-sm"

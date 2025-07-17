@@ -26,6 +26,16 @@
   margin-bottom: 1.5rem;
 }
 
+.devtools-intro {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4c3b6e;
+  text-align: center;
+  padding: 1rem;
+}
+
 .animated-hr {
   border: none;
   height: 4px;
@@ -132,6 +142,19 @@
 
 /* Hide the Description column and style button for icon-only display on small screens (320px, 375px, 425px) */
 @media (max-width: 425px) {
+  .devtools-wrapper {
+    padding: 1rem;
+  }
+
+  .devtools-heading {
+    font-size: 2rem;
+  }
+
+  .devtools-intro {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
   .devtools-table th:nth-child(2),
   .devtools-table td:nth-child(2) {
     display: none;

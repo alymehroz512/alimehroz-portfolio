@@ -242,6 +242,9 @@ function Projects() {
         <Container>
           <h1 className="projects-heading">Code & Creativity</h1>
           <AnimatedHR />
+          <p className="projects-intro">
+            My projects reflect a blend of technical expertise and creative problem-solving, showcasing my ability to build dynamic, scalable, and user-centric applications. From immersive VR experiences to efficient task management systems, each project demonstrates my commitment to leveraging modern technologies to deliver innovative solutions.
+          </p>
           <div className="project-cards">
             {projects.map((project, index) => (
               <div key={index} className="project-card glass-bg">

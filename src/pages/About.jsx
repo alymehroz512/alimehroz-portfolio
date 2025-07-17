@@ -103,6 +103,9 @@ function About() {
         <Container>
           <h1 className="about-heading mx-1">Frontend & Forward</h1>
           <AnimatedHR />
+          <p className="about-intro">
+            Driven by a passion for creating intuitive and dynamic user interfaces, I specialize in transforming complex designs into accessible, high-performance web experiences. My journey in frontend development is fueled by a commitment to continuous learning, embracing the latest technologies, and crafting solutions that bridge the gap between aesthetics and functionality.
+          </p>
           <div className="accordion-container">
             <Accordion activeKey={activeKey} onSelect={setActiveKey} className="about-accordion advanced-accordion">
               <Accordion.Item eventKey="0">

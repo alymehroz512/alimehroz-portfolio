@@ -45,6 +45,16 @@
   }
 }
 
+.skills-intro {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4c3b6e;
+  text-align: center;
+  padding: 1rem;
+}
+
 /* Section subheadings */
 .section-subheading {
   background-color: #4c3b6e;
@@ -154,4 +164,20 @@
 
 .skill-card {
   margin-bottom: 1.5rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    padding: 1rem;
+  }
+
+  .skills-heading {
+    font-size: 2rem;
+  }
+
+  .skills-intro {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
 }

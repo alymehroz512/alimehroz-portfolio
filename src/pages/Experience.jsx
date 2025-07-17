@@ -116,6 +116,9 @@ export default function Experience() {
         <Container>
           <h1 className="experience-heading">Journey Blocks</h1>
           <AnimatedHR />
+          <p className="experience-intro">
+            My professional journey in web development has been marked by hands-on experience in building scalable, user-focused applications. From internships to full-time roles, I've honed my skills in frontend and full-stack development, delivering impactful projects that prioritize performance, accessibility, and collaboration.
+          </p>
           <div className="experience-cards">
             <ExperienceCard
               image={expSvgOne}

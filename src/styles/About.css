@@ -48,6 +48,16 @@
   }
 }
 
+.about-intro {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4c3b6e;
+  text-align: center;
+  padding: 1rem;
+}
+
 .accordion-container {
   max-width: 1200px;
   width: 100%;
@@ -173,5 +183,10 @@
   .accordion-container {
     max-width: 100%;
     padding: 0 1rem;
+  }
+
+  .about-intro {
+    font-size: 1rem;
+    padding: 0.8rem;
   }
 }

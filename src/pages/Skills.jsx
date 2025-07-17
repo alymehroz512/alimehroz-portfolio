@@ -400,6 +400,9 @@ function Skills() {
         <Container>
           <h1 className="skills-heading">Frontend Force</h1>
           <AnimatedHR />
+          <p className="skills-intro">
+            My expertise spans a robust set of technical and soft skills, enabling me to build scalable, responsive, and user-centric web applications. By leveraging modern tools and best practices, I deliver solutions that combine performance, accessibility, and seamless user experiences, all while thriving in collaborative and fast-paced environments.
+          </p>
           {skillCategories.map((section, idx) => (
             <div key={idx} className="mb-0">
               <div className="section-subheading w-100 text-start">

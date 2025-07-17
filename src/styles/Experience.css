@@ -30,6 +30,16 @@
   color: #BDB5D5;
 }
 
+.experience-intro {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4c3b6e;
+  text-align: center;
+  padding: 1rem;
+}
+
 .experience-cards {
   display: flex;
   flex-direction: column;
@@ -173,6 +183,19 @@
 }
 
 @media (max-width: 768px) {
+  .experience-wrapper {
+    padding: 1rem;
+  }
+
+  .experience-heading {
+    font-size: 2rem;
+  }
+
+  .experience-intro {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
   .experience-card {
     padding: 1.2rem 0.7rem 1.2rem 0.7rem;
   }
