@@ -182,6 +182,48 @@ function Projects() {
     await loadSlim(engine);
   }, []);
 
+  const particlesOptions = {
+    fullScreen: { enable: false },
+    background: { color: { value: "#ffffff" } },
+    fpsLimit: 60,
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "repulse" },
+        resize: { enable: true },
+      },
+      modes: {
+        repulse: { distance: 80, duration: 0.4 },
+      },
+    },
+    particles: {
+      color: { value: "#4c3b6e" },
+      links: {
+        color: "#4c3b6e",
+        distance: 120,
+        enable: true,
+        opacity: 0.4,
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: "none",
+        random: false,
+        straight: false,
+        outModes: { default: "bounce" },
+      },
+      number: {
+        value: 25,
+        density: { enable: true, area: 1000 },
+      },
+      opacity: { value: 0.4 },
+      shape: { type: "circle" },
+      size: { value: { min: 1, max: 4 } },
+    },
+    detectRetina: true,
+    pauseOnOutsideViewport: true,
+  };
+
   const getResponsiveRibbon = (fullText, shortText) => {
     return windowWidth <= 425 ? shortText : fullText;
   };
@@ -193,46 +235,7 @@ function Projects() {
       <Particles
         id="tsparticles"
         init={particlesInit}
-        options={{
-          fullScreen: { enable: false },
-          background: { color: { value: "#ffffff" } },
-          fpsLimit: 120,
-          interactivity: {
-            events: {
-              onHover: { enable: true, mode: "repulse" },
-              resize: true,
-            },
-            modes: {
-              repulse: { distance: 100, duration: 0.4 },
-            },
-          },
-          particles: {
-            color: { value: "#4c3b6e" },
-            links: {
-              color: "#4c3b6e",
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 1.5,
-              direction: "none",
-              random: false,
-              straight: false,
-              outModes: { default: "bounce" },
-            },
-            number: {
-              value: 40,
-              density: { enable: true, area: 800 },
-            },
-            opacity: { value: 0.5 },
-            shape: { type: "circle" },
-            size: { value: { min: 1, max: 5 } },
-          },
-          detectRetina: true,
-        }}
+        options={particlesOptions}
         className="particles-bg"
       />
       <Animated.div style={fadeIn} className="container-fluid projects-wrapper">
@@ -277,31 +280,13 @@ function Projects() {
                   <div className="project-github-container">
                     <a
                       href={project.link}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        padding: isIconOnlyWidth ? '0.3rem' : '0.4rem 0.8rem',
-                        color: '#fff',
-                        backgroundColor: '#4c3b6e',
-                        textDecoration: 'none',
-                        position: 'relative',
-                        transition: 'all 0.3s',
-                        width: isIconOnlyWidth ? '36px' : 'auto',
-                        maxWidth: isIconOnlyWidth ? '36px' : '200px',
-                      }}
+                      className="github-button"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <FaGithub size={24} />
                       {!isIconOnlyWidth && (
-                        <span
-                          style={{
-                            margin: '0.4rem',
-                            fontSize: '0.9rem',
-                            fontWeight: 600,
-                            backgroundColor: '#4c3b6e',
-                          }}
-                        >
+                        <span className="github-text">
                           View on GitHub
                         </span>
                       )}
