@@ -15,11 +15,11 @@ A modern, responsive portfolio website showcasing my skills, professional experi
     - [Development Tools](#development-tools)
     - [Design \& Collaboration](#design--collaboration)
     - [Deployment](#deployment)
-  - [🚀 Installation](#-installation)
-  - [📚 Usage](#-usage)
-  - [🤝 Contributing](#-contributing)
-  - [📬 Contact](#-contact)
-  - [📄 License](#-license)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
+  - [License](#license)
 
 ---
 
@@ -84,7 +84,7 @@ This portfolio website serves as a digital resume, presenting my journey as a we
 
 ---
 
-## 🚀 Installation
+## Installation
 
 To run this project locally, follow these steps:
 
@@ -142,7 +142,7 @@ To run this project locally, follow these steps:
 
 ---
 
-## 📚 Usage
+## Usage
 
 - Navigate through the site using the navigation bar to explore different sections (**About**, **Skills**, **Experience**, **Projects**, **DevTools**).
 - Click on GitHub links in the Projects section to view the source code of individual projects.
@@ -152,7 +152,7 @@ To run this project locally, follow these steps:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! To contribute:
 
@@ -175,7 +175,7 @@ Please ensure your code follows the project's coding standards and includes appr
 
 ---
 
-## 📬 Contact
+## Contact
 
 Feel free to reach out for collaboration or inquiries:
 
@@ -185,7 +185,7 @@ Feel free to reach out for collaboration or inquiries:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
