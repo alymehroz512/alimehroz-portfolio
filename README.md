@@ -1,16 +1,16 @@
-# 🌐 Portfolio Website
+# Portfolio Website
 
 A modern, responsive portfolio website showcasing my skills, professional experience, and projects as a web developer. Built with a focus on clean design, smooth animations, and seamless user experience, this portfolio highlights my expertise in frontend and full-stack development.
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
-- [🌐 Portfolio Website](#-portfolio-website)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [📝 Overview](#-overview)
-  - [✨ Features](#-features)
-  - [🛠️ Technologies Used](#️-technologies-used)
+- [Portfolio Website](#portfolio-website)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [Technologies Used](#technologies-used)
     - [Frontend](#frontend)
     - [Development Tools](#development-tools)
     - [Design \& Collaboration](#design--collaboration)
@@ -23,13 +23,13 @@ A modern, responsive portfolio website showcasing my skills, professional experi
 
 ---
 
-## 📝 Overview
+## Overview
 
 This portfolio website serves as a digital resume, presenting my journey as a web developer through dedicated sections for **About Me**, **Skills**, **Professional Experience**, **Projects**, and **Development Tools**. The site is fully responsive, ensuring an optimal experience across devices, and incorporates modern web technologies for dynamic interactions and animations. It is designed to be both visually appealing and functional—providing a professional platform to showcase my work to potential employers and collaborators.
 
 ---
 
-## ✨ Features
+## Features
 
 - **Responsive Design:** Adapts seamlessly to all screen sizes, from mobile devices to desktops.
 - **Interactive Animations:** Smooth transitions and engaging UI effects powered by React Spring and Framer Motion.
@@ -45,7 +45,7 @@ This portfolio website serves as a digital resume, presenting my journey as a we
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 ### Frontend
 
