@@ -230,7 +230,7 @@ function Contact() {
       />
       <Animated.div
         style={fadeIn}
-        className="container-fluid contact-container mt-5"
+        className="container-fluid contact-container"
       >
         <Container>
           <h1 className="contact-heading">Coffee & Code?</h1>

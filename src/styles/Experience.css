@@ -10,11 +10,13 @@
 }
 
 .experience-wrapper {
-  position: relative;
   min-height: 100vh;
-  font-family: 'Quicksand', sans-serif;
   padding: 3rem 1.5rem;
-  z-index: 1;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
 }
 
 .experience-container {

@@ -417,7 +417,7 @@ function Skills() {
       />
       <Animated.div
         style={fadeIn}
-        className="container-fluid skills-wrapper mt-0"
+        className="container-fluid skills-wrapper"
       >
         <Container>
           <h1 className="skills-heading">Frontend Force</h1>

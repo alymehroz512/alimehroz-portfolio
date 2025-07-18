@@ -288,7 +288,7 @@ function DevTools() {
       />
       <Animated.div
         style={fadeIn}
-        className="container-fluid devtools-container mt-5"
+        className="container-fluid devtools-container"
       >
         <Container>
           <h1 className="devtools-heading">Dev Bag</h1>

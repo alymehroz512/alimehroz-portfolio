@@ -133,7 +133,7 @@ export default function Experience() {
         }}
         className="particles-bg"
       />
-      <Animated.div style={fadeIn} className="container-fluid experience-container mt-5">
+      <Animated.div style={fadeIn} className="container-fluid experience-container">
         <Container>
           <h1 className="experience-heading">Journey Blocks</h1>
           <AnimatedHR />
