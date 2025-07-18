@@ -44,7 +44,8 @@
   padding: 6px 14px;
   border-radius: 0px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease-in-out; /* Increased duration for smoother effect */
+  transform: translateY(0);
   overflow: hidden;
   z-index: 1;
 }
@@ -57,7 +58,7 @@
   height: 100%;
   width: 0;
   background-color: rgba(255, 255, 255, 0.2);
-  transition: width 0.3s ease;
+  transition: width 0.5s ease-in-out; /* Increased duration for smoother effect */
   z-index: -1;
 }
 
@@ -71,6 +72,7 @@
   color: #4c3b6e !important;
   border-left: 2px solid white;
   border-right: 2px solid white;
+  transform: translateY(-2px); /* Subtle lift effect for smoothness */
 }
 
 .custom-toggler {
@@ -100,6 +102,7 @@
 
 .icon-link:hover {
   color: #4c3b6e;
+  transform: translateY(-1px);
 }
 
 /* For Desktop */
