@@ -12,12 +12,17 @@
 
 .skills-wrapper {
   min-height: 100vh;
-  padding: 3rem 1.5rem;
-  font-family: 'Quicksand', sans-serif;
+  padding: 6rem 1.5rem 3rem 1.5rem; /* Increased top padding for navbar */
+  font-family: 'Quicksand';
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
+  align-items: flex-start; /* Changed from center to flex-start */
+  position: relative;
+  box-sizing: border-box;
+}
+
+.skills-container {
+  padding-top: 2rem; /* Additional padding to clear navbar */
 }
 
 .skills-heading {
@@ -26,6 +31,8 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: #BDB5D5;
+  position: relative;
+  z-index: 1; /* Ensure heading is above particles */
 }
 
 .animated-hr {
@@ -57,6 +64,8 @@
   color: #4c3b6e;
   text-align: center;
   padding: 1rem;
+  position: relative;
+  z-index: 1; /* Ensure intro is above particles */
 }
 
 /* Section subheadings */
@@ -177,7 +186,6 @@
   background-color: #4c3b6e;
   color: #fff;
   border: none;
-  /* border-radius: 50%;   */
   width: 40px;
   height: 40px;
   display: flex;
@@ -200,9 +208,32 @@
 }
 
 /* Responsive Layout */
+@media (max-width: 992px) {
+  .skills-wrapper {
+    padding: 5rem 1rem 2rem 1rem; /* Adjusted for navbar on medium screens */
+  }
+
+  .skills-container {
+    padding-top: 1.5rem;
+  }
+
+  .skills-heading {
+    font-size: 2.2rem;
+  }
+
+  .skills-intro {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .skills-wrapper {
-    padding: 1rem;
+    padding: 4.5rem 0.5rem 1.5rem 0.5rem; /* Adjusted for navbar on small screens */
+  }
+
+  .skills-container {
+    padding-top: 1rem;
   }
 
   .skills-heading {
@@ -210,8 +241,27 @@
   }
 
   .skills-intro {
-    font-size: 1rem;
-    padding: 0.8rem;
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+
+  .section-subheading {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .skill-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+
+  .skill-description {
+    font-size: 0.9rem;
+  }
+
+  .skill-experience {
+    font-size: 0.85rem;
   }
 
   .scroll-top-button {
@@ -223,5 +273,23 @@
 
   .scroll-top-button svg {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .skills-wrapper {
+    padding: 7rem 2rem 3rem 2rem; /* Larger padding for larger screens */
+  }
+
+  .skills-container {
+    padding-top: 2.5rem;
+  }
+
+  .skills-heading {
+    font-size: 3rem;
+  }
+
+  .skills-intro {
+    font-size: 1.2rem;
   }
 }

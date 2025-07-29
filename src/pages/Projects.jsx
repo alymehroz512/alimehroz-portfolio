@@ -258,7 +258,7 @@ function Projects() {
         options={particlesOptions}
         className="particles-bg"
       />
-      <Animated.div style={fadeIn} className="container-fluid projects-wrapper">
+      <Animated.div style={fadeIn} className="container-fluid projects-container">
         <Container>
           <h1 className="projects-heading">Code & Creativity</h1>
           <AnimatedHR />

@@ -163,7 +163,7 @@ export default function Experience() {
               </ul>
               <ul style={listStyle}>
                 <li>
-                  One of my major ongoing projects is a fully responsive <b>Admin Dashboard</b>. I'm responsible for building dynamic modules for user data management, system configuration, and analytics visualization etc. The application integrates JWT with cookies for authentication and authorization, and RESTful APIs via Redux, with a focus on real-time updates and a seamless user experience. To ensure code quality, I've implemented extensive unit and integration testing using <b>Jest</b>.
+                  One of my major ongoing projects is a fully responsive <b>Admin Dashboard</b>. I'm responsible for building dynamic modules for user data management, system configuration, and analytics visualization. The application integrates JWT with cookies for authentication and authorization, and RESTful APIs via Redux, with a focus on real-time updates and a seamless user experience. To ensure code quality, I've implemented extensive unit and integration testing using <b>Jest</b>.
                 </li>
               </ul>
               <ul style={listStyle}>

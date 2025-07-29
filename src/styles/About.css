@@ -11,12 +11,17 @@
 
 .about-wrapper {
   min-height: 100vh;
-  padding: 3rem 1.5rem;
-  font-family: 'Quicksand', sans-serif;
+  padding: 6rem 1.5rem 3rem 1.5rem; /* Increased top padding for navbar */
+  font-family: 'Quicksand';
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 5rem;
+  align-items: flex-start; /* Changed from center to flex-start for better positioning */
+  position: relative;
+  box-sizing: border-box;
+}
+
+.about-container {
+  padding-top: 2rem; /* Additional padding to ensure content clears navbar */
 }
 
 .about-heading {
@@ -25,6 +30,8 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: #BDB5D5;
+  position: relative;
+  z-index: 1; /* Ensure heading is above particles */
 }
 
 .animated-hr {
@@ -56,12 +63,15 @@
   color: #4c3b6e;
   text-align: center;
   padding: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .accordion-container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .advanced-accordion .accordion-item {
@@ -199,23 +209,58 @@
 }
 
 /* --- Responsive Layout --- */
+@media (max-width: 992px) {
+  .about-wrapper {
+    padding: 5rem 1rem 2rem 1rem; /* Adjusted for navbar on medium screens */
+  }
+
+  .about-container {
+    padding-top: 1.5rem;
+  }
+
+  .about-heading {
+    font-size: 2.2rem;
+  }
+
+  .about-intro {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .accordion-container {
+    padding: 0 0.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .about-wrapper {
-    padding: 1rem;
+    padding: 4.5rem 0.5rem 1.5rem 0.5rem; /* Adjusted for navbar on small screens */
+  }
+
+  .about-container {
+    padding-top: 1rem;
   }
 
   .about-heading {
     font-size: 2rem;
   }
 
-  .accordion-container {
-    max-width: 100%;
-    padding: 0 1rem;
+  .about-intro {
+    font-size: 0.95rem;
+    padding: 0.5rem;
   }
 
-  .about-intro {
+  .accordion-container {
+    padding: 0 0.5rem;
+  }
+
+  .advanced-accordion .accordion-button {
     font-size: 1rem;
     padding: 0.8rem;
+  }
+
+  .accordion-body-wrapper {
+    padding: 1rem 1.5rem;
   }
 
   .scroll-top-button {
@@ -227,5 +272,23 @@
 
   .scroll-top-button svg {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-wrapper {
+    padding: 7rem 2rem 3rem 2rem; /* Larger padding for larger screens */
+  }
+
+  .about-container {
+    padding-top: 2.5rem;
+  }
+
+  .about-heading {
+    font-size: 3rem;
+  }
+
+  .about-intro {
+    font-size: 1.2rem;
   }
 }

@@ -174,7 +174,7 @@ const skillCategories = [
       {
         icon: <FaShareAlt />,
         title: "Context API",
-        desc: "Shared global state across kjerky components.\nAvoided prop drilling in deep trees.\nUsed useContext for state consumption.\nCreated custom context providers.\nImproved app modularity.",
+        desc: "Shared global state across components.\nAvoided prop drilling in deep trees.\nUsed useContext for state consumption.\nCreated custom context providers.\nImproved app modularity.",
         startYear: 2024,
       },
       {
@@ -417,7 +417,7 @@ function Skills() {
       />
       <Animated.div
         style={fadeIn}
-        className="container-fluid skills-wrapper"
+        className="container-fluid skills-container"
       >
         <Container>
           <h1 className="skills-heading">Frontend Force</h1>
