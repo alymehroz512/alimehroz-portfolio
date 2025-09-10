@@ -245,12 +245,12 @@ function Contact() {
               {
                 icon: <FaPhoneAlt />,
                 title: "Phone",
-                desc: "+92-348-4149332",
+                desc: "+92-347-6985183",
               },
               {
                 icon: <FaEnvelope />,
                 title: "Email",
-                desc: "alimehroz621@gmail.com",
+                desc: "alymehroz512@gmail.com",
                 className: "email-text",
               },
               {
